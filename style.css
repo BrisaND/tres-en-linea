@@ -1,0 +1,86 @@
+.d-flex{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+body{
+
+    padding: 40px;
+
+}
+
+.board.d-grid{
+
+    margin: 0 auto;
+    margin-top: 20px;
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.152);
+    width: 400px;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 3px;
+    box-shadow: 1px 5px 50px rgba(0, 0, 0, 0.3);
+
+}
+
+.board .space{
+
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s;
+
+}
+
+.board .space:hover{
+
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.5s;
+
+}
+
+.top-bar{
+
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 20px;
+
+}
+
+.p1{
+
+    color: tomato;
+
+}
+
+.p2{
+
+    color: #1946d8;
+
+}
+
+.x, .o {
+
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+
+.x{
+
+    color:#1946d8;
+
+}
+
+
+.o{
+
+    color: tomato;
+
+}
