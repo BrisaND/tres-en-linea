@@ -98,13 +98,12 @@ $(".board").on("click", function (event){
                         s.addSymbol(event.target, p.symbol);
                         saveSpacePlayed(index, p.symbol);
 
+                        if (isThreeInLine(p.symbol)){
+    
+                            p.win();
+                        }
                     }
                     
-                    if (isThreeInLine(p.symbol)){
-
-                        p.win();
-
-                    }
                     
                 });
                 
@@ -152,16 +151,16 @@ function saveSpacePlayed(index, symbol){
 }
 
 function isThreeInLine(symbol){
-    [//    0
+   // [//    0
     //   0 1 2
-        [1,2,3],
+  //      [1,2,3],
     //     1
     //   0 1 2
-        [4,5,6],
+ //       [4,5,6],
     //     2
     //   0 1 2
-        [7,8,9]
-    ]
+  //      [7,8,9]
+ //   ]
 
     //match rows
     //top [0,0] + [0,1] + [0,2]
@@ -176,6 +175,21 @@ function isThreeInLine(symbol){
     //match diagonals
     // left to right [0,0] + [1,0] + [2,0]
     // right to left [0,1] + [1,1] + [2,1]
+    
+    if ((board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) ||
+        (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol) ||
+        (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol) ||
+        (board[0][0] == symbol && board[1][0] == symbol && board[2][0] == symbol) ||
+        (board[0][1] == symbol && board[1][1] == symbol && board[2][1] == symbol) ||
+        (board[0][2] == symbol && board[1][2] == symbol && board[2][2] == symbol) ||
+        (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
+        (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol)){
 
+        return true;
+
+    }else {
+
+        return false;
+        
+    }
 }
-
