@@ -192,4 +192,34 @@ function isThreeInLine(symbol){
         return false;
         
     }
+    
+}
+
+function reset() {
+
+    players.forEach(p => {
+
+        p.isTurn = (p.id == 1) ? true : false;
+        p.won = false;
+        $("." + p.symbol).remove();
+
+    });
+
+    spaces.forEach(s => {
+
+        s.played = false;
+        
+    });
+    
+    board = [
+        
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    
+    ];
+
+    $(".heading").text("Tres en linea");
+    $(".heading").css("color", "black");
+
 }
